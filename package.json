@@ -2,7 +2,7 @@
   "name": "kwt-starter-pwa",
   "version": "0.0.1",
   "scripts": {
-    "dev:only": "svelte-kit dev --host 0.0.0.0 --port 80",
+    "dev:only": "svelte-kit dev --host 0.0.0.0 --port 3000",
     "build:only": "svelte-kit build",
     "preview": "svelte-kit preview",
     "tailwind:watch": "cross-env TAILWIND_MODE=watch cross-env NODE_ENV=development postcss src/styles/tailwind.css -o src/styles/tailwind-output.css -w",

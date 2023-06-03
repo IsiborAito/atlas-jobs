@@ -177,7 +177,7 @@
           >
             {job.why}
           </div>
-          <h1
+          <!-- <h1
             class="mt-4 text-[1.4rem] leading-[1.75rem] h-font uppercase font-semibold"
             use:viewport
             on:enterViewport={(e) =>
@@ -195,9 +195,9 @@
             on:exitViewport={(e) =>
               e.target.classList.remove(`${is_safari ? "" : "xyz-in"}`)}
           >
-            <!-- {job.desc} -->
+             {job.desc} 
             ...
-          </div>
+          </div> -->
         {/if}
 
         {#if job.isTransforming}

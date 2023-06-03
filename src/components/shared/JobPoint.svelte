@@ -15,7 +15,7 @@
   export let desc;
   export let isAtRisk;
   export let isTransforming;
-
+  export let why;
   // Positioning...
   export let ecosystem;
   export let mouseCoord;
@@ -97,9 +97,15 @@
             </div>
           {/if}
         {/if}
-        <div class="line-clamp-6">
-          {desc}
-        </div>
+        {#if isTransforming || isAtRisk}
+          <div class="line-clamp-6">
+            {why}
+          </div>
+        {:else}
+          <div class="line-clamp-6">
+            {desc}
+          </div>
+        {/if}
       </div>
     </div>
   </div>
@@ -128,9 +134,15 @@
             </div>
           {/if}
         {/if}
-        <div class="line-clamp-6">
-          {desc}
-        </div>
+        {#if isTransforming || isAtRisk}
+          <div class="line-clamp-6">
+            {why}
+          </div>
+        {:else}
+          <div class="line-clamp-6">
+            {desc}
+          </div>
+        {/if}
       </div>
     </div>
   </div>
