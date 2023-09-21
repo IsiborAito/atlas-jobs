@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store'
 
 const config = writable({
-  backendURL: "http://127.0.0.1:1337/backend/api",
+  backendURL: "https://futureskills.foodbev.co.za/backend/api/",
   currentUser: null,
 });
 
