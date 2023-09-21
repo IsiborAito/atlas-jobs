@@ -31,7 +31,7 @@
       <div class="flex items-center rounded-xl">
         <div
           class="w-full h-[25rem] relative rounded-md bg-center"
-          style="background-image: url(http://3.253.128.228:1337/uploads/vc_06_22672d62db.png); background-size: cover;"
+          style="background-image: url(https://res.cloudinary.com/dckbo71mc/image/upload/v1695196373/vc_06_a4b87e50d0.jpg?updated_at=2023-09-20T07:52:54.538Z); background-size: cover;"
           data-aos="fade-right"
           data-aos-anchor-placement="top-bottom"
           data-aos-delay="500"
@@ -94,7 +94,7 @@
           data-aos-offset="0"
           data-aos-duration="500"
           class="w-full h-[25rem] relative rounded-md bg-center"
-          style="background-image: url(http://3.253.128.228:1337/uploads/vc_01_9490c729db.png); background-size: cover;"
+          style="background-image: url(https://res.cloudinary.com/dckbo71mc/image/upload/v1695196373/vc_01_63546488b4.jpg?updated_at=2023-09-20T07:52:54.256Z); background-size: cover;"
         />
       </div>
     </div>

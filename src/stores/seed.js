@@ -1,5 +1,5 @@
 const CONFIG = {
-  "backendURL": "https://futureskills.foodbev.co.za/backend/api/",
+  "backendURL": "https://futureskills.foodbev.co.za/backend/api",
   "currentUser": null,
   "aboutUs": {
     "id": 1,

@@ -21,15 +21,15 @@
 
   const getImg = (el, property) => {
     let url =
-      $config.backendURL.replaceAll("/api", "") +
+      // $config.backendURL.replaceAll("/api", "") +
       el.attributes[property].data.attributes.url;
 
-    if (!url.includes("amazon"))
-      url = url.replaceAll("https:/.", "https://api.");
+    // if (!url.includes("amazon"))
+    //   url = url.replaceAll("https:/.", "https://api.");
 
-    if (url.includes("https:/.futurejobs-foodbev.co.za"))
-      url = url.replaceAll("https:/.futurejobs-foodbev.co.za", "");
-
+    // if (url.includes("https://futureskills.foodbev.co.za/backend/api"))
+    //   url = url.replaceAll("https://futureskills.foodbev.co.za/backend/api", "");
+    console.log(url);
     return url;
   };
 
@@ -59,7 +59,7 @@
             `${$config.backendURL}/home-job-galleries?populate=JobImage,job_relation&${PAGE}`
           ),
         ]);
-
+        console.log('response', response);
         // VCS ..................................................
         let vcs = get(response[0], "data.data");
         vcs = vcs.map((vc) => ({
@@ -86,19 +86,19 @@
         valueChains.update((prev) => vcs);
         jobs.update((prev) => jbs);
 
-        // About US ..................................................
+        // // About US ..................................................
         let aboutUs = get(response[2], "data.data");
         aboutUs = { id: aboutUs.id, ...prune(aboutUs) };
 
-        // Home Ecosystems .............................................
+        // // Home Ecosystems .............................................
         let hVcs = get(response[3], "data.data");
         hVcs = hVcs.map((vc) => ({
           ...prune(vc),
           EcosystemImage: getImg(vc, "EcosystemImage"),
           id: prune(vc).value_chain.data.id,
         }));
-
-        // Home Jobs ..................................................
+        console.log('hVcs', hVcs);
+        // // Home Jobs ..................................................
         let hJbs = get(response[4], "data.data");
         hJbs = hJbs.map((jb) => ({
           ...prune(jb),
@@ -106,14 +106,14 @@
           id: prune(jb).job.data.id,
         }));
 
-        // Home Gallery ..................................................
+        // // Home Gallery ..................................................
         let hGal = get(response[5], "data.data");
         hGal = hGal.map((jb) => ({
           ...prune(jb),
           JobImage: getImg(jb, "JobImage"),
           id: prune(jb).job_relation.data.id,
         }));
-
+        
         config.update((prev) => ({
           ...prev,
           aboutUs,
@@ -121,6 +121,8 @@
           hJbs,
           hGal,
         }));
+
+       
 
         // setTimeout(() => {
         //   console.log($config);
